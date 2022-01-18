@@ -1,4 +1,4 @@
-# denoising_stock_with_fft
+# Denoising asset prices with fft
 ### Summary:
 
 Denoise the variation of the stock, forex, crypto, etc prices with FFT assuming that the buy/sell forces act like a composition of waves obtaining an interesting result for the EUR/USD forex pair

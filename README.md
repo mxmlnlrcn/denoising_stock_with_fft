@@ -1,25 +1,25 @@
-# Denoising assets price with fft
+# Denoising assets price with fft (Fast Fourier Transform)
 ### Summary:
 
 Denoise the variation of the stock, forex, crypto, etc prices with FFT assuming that the buy/sell forces act like a composition of waves obtaining an interesting result for the EUR/USD forex pair
 
 
-### Assumtions:
+### Assumptions:
 
-1. The buyers and the sellers are two group of people that act like a wave
+1. The buyers and the sellers are two groups of people that act like a wave
 2. The speculation and news act like "noise" in the valuation
 
 
 ### Logic behind:
 
-Having the previous assumtions in my head I start computing the daily change of the asset having something like a white noise that have noise on it, so I calculate the Power spectral density (PSD) to identify frequencies that have a PSD greater than 2 standard deviations to build the "denoised" daily changes in the asset price to build a trading strategy following the next steps:
+Taking in consideration the previous assumptions, I start computing the daily change of the asset having something like a white noise that have noise on it, so I calculate the Power spectral density (PSD) to identify frequencies that have a PSD greater than 2 standard deviations to build the "denoised" daily changes in the asset price to build a trading strategy following the next steps:
 
 * Compute the 5 next changes in the price
-* Compute the price multiplying the inicial price with the computed variations
+* Compute the price by multiplying the initial price with the computed variations
 * Define the target as the expected price given by the previous calculations
-* If the target is grater than the actual price the algorithm goes Long, otherwise it goes Short
-* If the expected variation by the target and the actual price is greater than a trigger it "place" the order
-* The algorithm save the results of the comparition of the real and expected final price
+* If the target is greater than the actual price the algorithm goes Long, otherwise it goes Short
+* If the expected variation by the target and the actual price is greater than a trigger it "places" the order
+* The algorithm saves the results of the comparison of the real and expected final price
 
 
 ### Parameters:
